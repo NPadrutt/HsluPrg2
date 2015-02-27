@@ -1,4 +1,4 @@
-package ch.hslu.prg2.ueb2.Uebung1;
+package ch.hslu.prg2.ueb2;
 
 import java.util.ArrayList;
 

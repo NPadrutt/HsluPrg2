@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ch.hslu.prg2.ueb2.Uebung1;
+package ch.hslu.prg2.ueb2;
 
+import ch.hslu.prg2.ueb2.Stack;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;

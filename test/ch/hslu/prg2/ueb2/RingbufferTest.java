@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ch.hslu.prg2.ueb2.Uebung1.Uebung2;
+package ch.hslu.prg2.ueb2;
 
+import ch.hslu.prg2.ueb2.Ringbuffer;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
