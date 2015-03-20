@@ -21,32 +21,37 @@ public class ListOne implements IList {
 
     @Override
     public boolean remove(int item) {
-        return _list.remove((Object)item);
+        return _list.remove((Integer)item);
     }
 
     @Override
     public boolean removeValue(int value) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return _list.remove((Integer) value);
     }
 
     @Override
     public boolean removeValues(int value) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        while(_list.contains(value)){
+            _list.remove((Integer)value);
+        }        
+        return _list.contains(value);
     }
 
     @Override
     public int size() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return _list.size();
     }
 
     @Override
     public boolean exists(int item) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return _list.contains(item);
     }
 
     @Override
     public void print() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        for(int i : _list){
+            System.out.println(i);
+        }
     }
     
 }
