@@ -65,4 +65,10 @@ public class AddressEntryTest {
         AddressEntry entry = new AddressEntry();
         entry.setGivenName("test.ch");
     }
+    
+    @Test(expected = InvalidEmailAddressException.class)
+    public void testSetEmailAddressWrongFormat(){
+        AddressEntry entry = new AddressEntry();
+        entry.setGivenName("test@@something.ch");
+    }
 }

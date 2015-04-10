@@ -1,5 +1,7 @@
 package ch.hslu.prg2.ueb6;
 
+import com.sun.xml.internal.ws.util.StringUtils;
+
 public class AddressEntry {
 
     private String givenName, familyName;
@@ -63,7 +65,25 @@ public class AddressEntry {
         }
     }
 
-    public void setEmailAddress(String eMailAdresse) {
+    public void setEmailAddress(String eMailAdresse) throws InvalidEmailAddressException {
+        if(!eMailAdresse.contains("@")){
+            throw new InvalidEmailAddressException("Mailadress doesn't contain a @");
+        }
+        if(countOccurrences(eMailAdresse, '@') > 1){
+            throw new InvalidEmailAddressException("Mailadress doesn't contain a @");
+        }
         // wirft InvalidEmailException falls eMailAdresse kein @ enthaelt
+    }
+    
+    private int countOccurrences(String haystack, char needle){
+        int count = 0;
+        for (int i=0; i < haystack.length(); i++)
+        {
+            if (haystack.charAt(i) == needle)
+            {
+                 count++;
+            }
+        }
+        return count;
     }
 }
