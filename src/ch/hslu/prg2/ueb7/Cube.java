@@ -30,7 +30,7 @@ public class Cube implements Comparable {
         cubeDescription += "CUBE " + number + System.lineSeparator();
         cubeDescription += "sides: " +  _s1 + "   " + _s2 + "   " + _s3 + "   " + System.lineSeparator();
         cubeDescription += "volume: " + getVolume() + System.lineSeparator();
-        cubeDescription += "surface: " + getSurface + System.lineSeparator();
+        cubeDescription += "surface: " + getSurface() + System.lineSeparator();
         cubeDescription += System.lineSeparator();
         cubeDescription += "----------------------------" + System.lineSeparator();
         return cubeDescription;
