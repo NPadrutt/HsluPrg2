@@ -38,17 +38,40 @@ public class Cube implements Comparable {
     
     @Override
     public boolean equals(Object other){
-        return true;
+        if (this == other){
+            return true;
+        }
+        
+        if(this == null){
+            return false;
+        }
+        
+        if(this.getClass() == other.getClass()){
+            return true;
+        }
+        
+        Cube otherCube = (Cube) other;        
+        return this._s1 == otherCube._s1 && this._s2 == otherCube._s2 && this._s3 == otherCube._s3;
     }
     
     @Override
     public int hashCode(){
-        return 0;
+        return getVolume() + _s1  + _s2 + _s3; 
     }
 
     @Override
-    public int compareTo(Object o) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public int compareTo(Object other) {
+        Cube otherCube = (Cube) other;
+        
+        if(getVolume() == otherCube.getVolume()){
+            return 0;
+        }
+        
+        if (getVolume() < otherCube.getVolume()){
+            return -1;
+        }
+        
+        return 1;
     }
     
     
