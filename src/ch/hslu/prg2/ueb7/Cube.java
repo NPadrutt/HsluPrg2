@@ -72,7 +72,5 @@ public class Cube implements Comparable {
         }
         
         return 1;
-    }
-    
-    
+    }    
 }

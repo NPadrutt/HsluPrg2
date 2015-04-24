@@ -1,9 +1,9 @@
-package ch.hslu.prg2.oop07.solidworks;
+package ch.hslu.prg2.ueb7;
 
-import ch.hslu.prg2.ueb7.SolidFileIO;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -69,22 +69,24 @@ public final class SolidWorks extends JFrame implements ActionListener {
      */
     @Override
     public void actionPerformed(final ActionEvent event) {
-        if (event.getSource() == bRead) {
-            solids = SolidFileIO.readSolids(FILE_NAME);
-            doOutput();
-        }
-        if ((event.getSource() == bSort1) && (solids != null)) {
-            // your turn
-            doOutput();
-        }
-        if ((event.getSource() == bSort2) && (solids != null)) {
-            // your turn
-            doOutput();
-        }
-        if ((event.getSource() == bSort3) && (solids != null)) {
-            // your turn
-            doOutput();
-        }
+        try{
+            if (event.getSource() == bRead) {
+                solids = SolidFileIO.readSolids(FILE_NAME);
+                doOutput();
+            }
+            if ((event.getSource() == bSort1) && (solids != null)) {
+                // your turn
+                doOutput();
+            }
+            if ((event.getSource() == bSort2) && (solids != null)) {
+                // your turn
+                doOutput();
+            }
+            if ((event.getSource() == bSort3) && (solids != null)) {
+                // your turn
+                doOutput();
+            }
+        } catch(IOException ex){}
     }
 
     /**
