@@ -5,7 +5,7 @@ import java.awt.Graphics;
 
 public class Ball {
     private final int _x;
-    private final int _y;
+    private int _y;
     private final int _radius;
     private final Color _color;
     
@@ -19,5 +19,16 @@ public class Ball {
     public void draw(Graphics g){
         g.fillOval(_x,_y,_radius, _radius);
         g.setColor(Color.CYAN);
-    } 
+    }
+    private int temp = 0;
+    public void move(){
+        if(temp != 80){
+            temp ++;
+            return;
+        }
+        temp = 0;
+        if(_y -_radius < 300) {
+            _y += 1;
+        }
+    }
 }

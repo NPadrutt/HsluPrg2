@@ -2,7 +2,6 @@ package ch.hslu.prg2.ueb8;
 
 import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.Graphics2D;
 import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -25,6 +24,7 @@ public class BallGame extends JPanel {
     private void initComponents() {
 
         setName("gameBoardPanel"); // NOI18N
+        setPreferredSize(new java.awt.Dimension(300, 300));
         addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 formMouseClicked(evt);
@@ -51,14 +51,16 @@ public class BallGame extends JPanel {
     @Override
     public void paint(Graphics g) {
         for(Ball ball:_ballList){
+            ball.move();
             ball.draw(g);
         }
     }
     
     public static void main(String[] args) {
-		JFrame frame = new JFrame("Mini Tennis");
+		JFrame frame = new JFrame("Ball Game");
 		frame.add(new BallGame());
-		frame.setSize(300, 300);
+		frame.setSize(470, 400);
+                frame.setResizable(false);
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 
