@@ -1,6 +1,5 @@
 package ch.hslu.prg2.ueb8;
 
-import java.awt.Color;
 import java.awt.Graphics;
 import java.util.ArrayList;
 import javax.swing.JFrame;
@@ -24,7 +23,7 @@ public class BallGame extends JPanel {
     private void initComponents() {
 
         setName("gameBoardPanel"); // NOI18N
-        setPreferredSize(new java.awt.Dimension(300, 300));
+        setPreferredSize(new java.awt.Dimension(600, 400));
         addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 formMouseClicked(evt);
@@ -44,7 +43,7 @@ public class BallGame extends JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
-        Ball ball = new Ball(evt.getX(), evt.getY(), 40, Color.GREEN);
+        Ball ball = new Ball(evt.getX(), evt.getY());
         _ballList.add(ball);
     }//GEN-LAST:event_formMouseClicked
 
@@ -59,13 +58,18 @@ public class BallGame extends JPanel {
     public static void main(String[] args) {
 		JFrame frame = new JFrame("Ball Game");
 		frame.add(new BallGame());
-		frame.setSize(470, 400);
+		frame.setSize(600, 400);
                 frame.setResizable(false);
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 
-                while(true){
-                    frame.repaint();
+                try{
+                    while(true){
+                        frame.repaint();
+                        Thread.sleep(10);
+                    }
+                } catch(InterruptedException ex){
+                    System.out.println(ex);
                 }
 	}
 
